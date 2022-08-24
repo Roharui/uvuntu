@@ -1,0 +1,13 @@
+{
+  "cursor": {
+    "size": [14, 24],
+    "filename": "cursor.png"
+  },
+  "directory": {
+    "size": [128, 128],
+    "filename": "directory.png"
+  },
+  "logo": {
+    "filename": "logo.png"
+  }
+}
