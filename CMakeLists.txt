@@ -1,6 +1,6 @@
 # CMAKE 기본 설정
 cmake_minimum_required(VERSION 3.0.0)
-project(raylib_cmake VERSION 0.1.0)
+project(uvuntu VERSION 0.1.0)
 
 # 기본 컴파일러
 set(CMAKE_CXX_COMPILER g++)
@@ -10,14 +10,14 @@ set(CMAKE_CXX_STANDARD 20)
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
 # 전역 사용 외부 디렉토리
-link_directories(C:/msys64/mingw64/include)
+link_directories(C:/msys64/mingw64/include) 
 
 # 다른 CmakeLists.txt 추가
 add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 
 # 의존성 추가
-add_dependencies(raylib_loader raylib_utils)
-add_dependencies(raylib_driver raylib_utils raylib_loader)
+add_dependencies(uvuntu_loader uvuntu_utils)
+add_dependencies(uvuntu_driver uvuntu_utils uvuntu_loader)
 
 # 실행 파일 등록
 add_executable(${PROJECT_NAME} main.cpp)
@@ -28,9 +28,9 @@ target_compile_options(${PROJECT_NAME} PUBLIC -std=c++20 -ggdb3 -O3 -Wall -Werro
 # 라이브러리 추가
 target_link_libraries(
   # 프로젝트 이름
-  ${PROJECT_NAME} 
+  ${PROJECT_NAME}
   # 내부 라이브러리 추가
-  raylib_driver raylib_loader raylib_utils
+  uvuntu_driver uvuntu_loader uvuntu_utils
   # 외부 라이브러리 추가
   raylib gdi32 winmm
 )
