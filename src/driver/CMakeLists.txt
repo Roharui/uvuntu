@@ -1,4 +1,7 @@
 
+# 서브 디렉토리 추가
+add_subdirectory(detactor)
+
 # 내부 라이브러리 추가
 add_library(uvuntu_driver STATIC driver.cpp)
 

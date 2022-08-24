@@ -6,15 +6,26 @@
 #include "utils/utils.hpp"
 #include "loader/imgLoader.hpp"
 
+#include "detactor/detactor.hpp"
+
+#include "object/object.hpp"
+#include "object/cursor/cursor.hpp"
+
 class Driver
 {
-private:
-    Texture2D cursor;
-
 public:
     int run(void);
     void init(void);
+    ~Driver(void);
 };
+
+// loader
+
+Loader *loader;
+
+// objects
+
+Cursor cursor;
 
 int Driver::run(void)
 {
@@ -26,7 +37,8 @@ int Driver::run(void)
 
         cursorHide();
 
-        Vector2 v = GetMousePosition();
+        Detactor *detactor = Detactor::detact();
+        cursor.execute(detactor);
 
         // ============================
 
@@ -35,10 +47,11 @@ int Driver::run(void)
         // === draw side ===
 
         ClearBackground(RAYWHITE);
-        DrawTexture(this->cursor, int(v.x), int(v.y), WHITE);
+        cursor.run();
 
         // =================
 
+        delete detactor;
         EndDrawing();
     }
 
@@ -52,7 +65,12 @@ void Driver::init()
     InitWindow(800, 450, "Uvuntu");
     SetTargetFPS(60);
 
-    Loader loader;
+    Loader *loader = new Loader;
 
-    this->cursor = loader.getTexture("cursor");
+    cursor.init(loader);
+}
+
+Driver::~Driver()
+{
+    delete loader;
 }
