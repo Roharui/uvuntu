@@ -3,17 +3,7 @@
 
 #include "object/object.hpp"
 
-class Cursor : public Object
-{
-private:
-  Texture2D cursor;
-  Vector2 v;
-
-public:
-  void init(Loader *loader);
-  void execute(Detactor *data);
-  void run(void);
-};
+#include "cursor.hpp"
 
 void Cursor::init(Loader *loader)
 {
@@ -27,5 +17,5 @@ void Cursor::execute(Detactor *data)
 
 void Cursor::run()
 {
-  DrawTexture(this->cursor, int(this->v.x), int(this->v.y), WHITE);
+  DrawTexture(this->cursor, (int)this->v.x, (int)this->v.y, WHITE);
 }

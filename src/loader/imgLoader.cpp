@@ -12,23 +12,14 @@
 
 #include "utils/path.hpp"
 
+#include "imgLoader.hpp"
+
 using std::map;
 using std::string;
 
 using namespace Json;
 
 namespace fs = std::filesystem;
-
-class Loader
-{
-private:
-  map<string, Texture2D> mapset;
-  Value openJSON(string path);
-
-public:
-  Loader();
-  Texture2D getTexture(string path);
-};
 
 // === private ===
 
@@ -81,11 +72,5 @@ Loader::Loader()
 
 Texture2D Loader::getTexture(string path)
 {
-
-  for (auto it : this->mapset)
-  {
-    if (it.first == path)
-      return it.second;
-  }
-  return {0, 0, 0, 0, 0};
+  return this->mapset.find(path)->second;
 }

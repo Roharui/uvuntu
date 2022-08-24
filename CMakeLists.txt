@@ -22,23 +22,33 @@ link_directories(C:/msys64/mingw64/include)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 
 # 의존성 추가
-add_dependencies(uvuntu_loader uvuntu_utils)
-add_dependencies(uvuntu_object uvuntu_loader uvuntu_detactor)
-add_dependencies(uvuntu_cursor uvuntu_object)
-add_dependencies(uvuntu_driver uvuntu_utils uvuntu_loader uvuntu_detactor)
+include(dependencies.cmake)
 
 # 실행 파일 등록
 add_executable(${PROJECT_NAME} main.cpp)
 
 # 컴파일 옵션 설정
-target_compile_options(${PROJECT_NAME} PUBLIC -std=c++20 -ggdb3 -O3 -Wall -Werror -Wwrite-strings -fno-default-inline)
+target_compile_options(
+  ${PROJECT_NAME} 
+  PUBLIC 
+  -std=c++20 
+  -ggdb3 
+  -O3 
+  -Wall 
+  -Werror
+)
 
 # 라이브러리 추가
 target_link_libraries(
   # 프로젝트 이름
   ${PROJECT_NAME}
   # 내부 라이브러리 추가
-  uvuntu_driver uvuntu_object uvuntu_cursor uvuntu_loader uvuntu_utils uvuntu_detactor
+  # 드라이버
+  uvuntu_driver 
+  # Object 관련 
+  uvuntu_object uvuntu_cursor uvuntu_button 
+  # 기타
+  uvuntu_loader uvuntu_utils uvuntu_detactor
   # 외부 라이브러리 추가
   raylib gdi32 winmm
 )

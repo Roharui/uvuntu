@@ -10,22 +10,24 @@
 
 #include "object/object.hpp"
 #include "object/cursor/cursor.hpp"
+#include "object/button/button.hpp"
 
-class Driver
-{
-public:
-    int run(void);
-    void init(void);
-    ~Driver(void);
-};
+#include "driver.hpp"
+
+#define NULL_VEC   \
+    {              \
+        0.0f, 0.0f \
+    }
+#define NULL_COLOR \
+    {              \
+        0, 0, 0    \
+    }
 
 // loader
 
 Loader *loader;
 
 // objects
-
-Cursor cursor;
 
 int Driver::run(void)
 {
@@ -38,6 +40,7 @@ int Driver::run(void)
         cursorHide();
 
         Detactor *detactor = Detactor::detact();
+        button.execute(detactor);
         cursor.execute(detactor);
 
         // ============================
@@ -46,7 +49,8 @@ int Driver::run(void)
 
         // === draw side ===
 
-        ClearBackground(RAYWHITE);
+        ClearBackground(WHITE);
+        button.run();
         cursor.run();
 
         // =================
@@ -67,6 +71,7 @@ void Driver::init()
 
     Loader *loader = new Loader;
 
+    button.init({0.0f, 0.0f}, {100.0f, 100.0f}, BLUE);
     cursor.init(loader);
 }
 
