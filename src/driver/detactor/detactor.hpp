@@ -28,12 +28,8 @@ public:
   bool getClicked(void);
 
   bool isInside(Vector2 &curLoc, Vector2 &size);
-  bool isClicked(Vector2 &curLoc, Vector2 &size);
-  bool isLeftClicked(Vector2 &curLoc, Vector2 &size);
-  bool isRightClicked(Vector2 &curLoc, Vector2 &size);
-
-  bool isLeftClicking(Vector2 &curLoc, Vector2 &size);
-  bool isRightClicking(Vector2 &curLoc, Vector2 &size);
+  isMouseClick isClicked(Vector2 &curLoc, Vector2 &size);
+  isMouseClick isClicking(Vector2 &curLoc, Vector2 &size);
 };
 
 #endif

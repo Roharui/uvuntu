@@ -9,6 +9,12 @@ struct MouseClick
   bool middle;
 };
 
+struct isMouseClick
+{
+  MouseClick click;
+  bool isClick;
+};
+
 void cursorHide();
 
 #endif

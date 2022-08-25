@@ -23,7 +23,7 @@ public:
       bool useClick);
   Clickable() {}
   void run(Detactor *data, Vector2 &curLoc, Vector2 &size);
-  void LRClick(Detactor *data, Vector2 &curLoc, Vector2 &size);
+  void LRClick(MouseClick click);
 };
 
 #endif

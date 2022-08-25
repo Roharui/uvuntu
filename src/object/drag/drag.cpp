@@ -3,7 +3,8 @@
 
 void DragObj::execute(Detactor *data)
 {
-  if (data->isLeftClicking(this->curLoc, this->size))
+  isMouseClick click = data->isClicking(this->curLoc, this->size);
+  if (click.isClick && click.click.left)
   {
     Vector2 delta = data->getClickMove();
     this->curLoc.x += delta.x;

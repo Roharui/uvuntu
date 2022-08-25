@@ -53,6 +53,8 @@ target_link_libraries(
   uvuntu_clickable
   # 기타
   uvuntu_loader uvuntu_utils uvuntu_detactor
+  # 설정
+  uvuntu_config
   # 외부 라이브러리 추가
   raylib gdi32 winmm
 )

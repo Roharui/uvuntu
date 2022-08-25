@@ -7,13 +7,15 @@
 #include "object/object.hpp"
 #include "icon.hpp"
 
+#include "config/config.hpp"
+
 using std::list;
 
 class Icons : public Object
 {
 private:
   Vector2 iconLoc = {0, 0};
-  int iconSize = 128;
+  int iconSize = ICON_SIZE;
 
 public:
   list<IconObj> icon_list;

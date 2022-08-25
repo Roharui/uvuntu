@@ -15,21 +15,23 @@ Clickable::Clickable(
 
 void Clickable::run(Detactor *data, Vector2 &curLoc, Vector2 &size)
 {
-    if (this->useClick && data->isClicked(curLoc, size))
+    isMouseClick click = data->isClicked(curLoc, size);
+    if (click.isClick)
     {
-        click();
+        if (this->useClick)
+            this->click();
+        else
+            this->LRClick(click.click);
     }
-    this->LRClick(data, curLoc, size);
 }
 
-void Clickable::LRClick(Detactor *data, Vector2 &curLoc, Vector2 &size)
+void Clickable::LRClick(MouseClick click)
 {
-    if (data->isLeftClicked(curLoc, size))
+    if (click.left)
     {
         this->lclick();
     }
-    data->setClicked(false);
-    if (data->isRightClicked(curLoc, size))
+    if (click.right)
     {
         this->rclick();
     }

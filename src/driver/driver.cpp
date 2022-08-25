@@ -3,14 +3,7 @@
 #include <iostream>
 #include <string>
 
-#include "utils/utils.hpp"
-#include "loader/imgLoader.hpp"
-
-#include "detactor/detactor.hpp"
-
-#include "object/cursor/cursor.hpp"
-#include "object/button/button.hpp"
-
+#include "config/config.hpp"
 #include "driver.hpp"
 
 #define NULL_VEC   \
@@ -61,13 +54,13 @@ int Driver::run(void)
 
 void Driver::init()
 {
-    InitWindow(800, 450, "Uvuntu");
-    SetTargetFPS(120);
+    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_NAME);
+    SetTargetFPS(WINDOW_FPS);
 
     loader = new Loader;
 
     page.init({128.0f, 0.0f}, {100.0f, 100.0f}, BLUE);
-    icons.init(loader, {"directory", "file"});
+    icons.init(loader, {"directory", "file", "file", "file", "file", "file"});
     cursor.init(loader);
 }
 

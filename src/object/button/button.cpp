@@ -24,18 +24,6 @@ void ButtonObj::whenRightClicked(void)
 
 void ButtonObj::execute(Detactor *data)
 {
-  if (data->isClicked(this->curLoc, this->size))
-  {
-    this->whenClicked();
-    if (data->isLeftClicked(this->curLoc, this->size))
-    {
-      this->whenLeftClicked();
-    }
-    if (data->isRightClicked(this->curLoc, this->size))
-    {
-      this->whenRightClicked();
-    }
-  }
 }
 
 void ButtonObj::run(void)

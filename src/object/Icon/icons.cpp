@@ -1,4 +1,5 @@
 
+#include "config/config.hpp"
 #include "icon.hpp"
 #include "icons.hpp"
 
@@ -10,7 +11,7 @@ void Icons::init(Loader *loader, list<string> iconList)
     icobj.init(loader, this->iconLoc, str);
 
     this->iconLoc.y += this->iconSize;
-    if (iconLoc.y + this->iconSize >= 900)
+    if (iconLoc.y + this->iconSize >= WINDOW_HEIGHT)
     {
       this->iconLoc.y = 0;
       this->iconLoc.x += this->iconSize;
