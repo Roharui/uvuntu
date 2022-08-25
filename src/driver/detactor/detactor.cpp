@@ -15,21 +15,32 @@ Detactor *Detactor::detact()
           .right = IsMouseButtonPressed(MOUSE_BUTTON_RIGHT),
           .middle = IsMouseButtonPressed(MOUSE_BUTTON_MIDDLE),
       },
+      {
+          .left = IsMouseButtonDown(MOUSE_BUTTON_LEFT),
+          .right = IsMouseButtonDown(MOUSE_BUTTON_RIGHT),
+          .middle = IsMouseButtonDown(MOUSE_BUTTON_MIDDLE),
+      },
       GetKeyPressed());
   return result;
 }
 
-Detactor::Detactor(Vector2 mouseLoc, Vector2 mouseMove, MouseClick mouseClick, int key)
+Detactor::Detactor(Vector2 mouseLoc, Vector2 mouseMove, MouseClick mouseClick, MouseClick mouseClicking, int key)
 {
   this->mouseLoc = mouseLoc;
   this->mouseMove = mouseMove;
   this->mouseClick = mouseClick;
+  this->mouseClicking = mouseClicking;
   this->key = key;
 }
 
 Vector2 Detactor::getClickLoc()
 {
   return this->mouseLoc;
+}
+
+Vector2 Detactor::getClickMove()
+{
+  return this->mouseMove;
 }
 
 int Detactor::getKey()
@@ -40,6 +51,11 @@ int Detactor::getKey()
 MouseClick Detactor::getMouseClick()
 {
   return this->mouseClick;
+}
+
+MouseClick Detactor::getMouseClicking()
+{
+  return this->mouseClicking;
 }
 
 bool Detactor::isInside(Vector2 &curLoc, Vector2 &size)
@@ -66,4 +82,16 @@ bool Detactor::isRightClicked(Vector2 &curLoc, Vector2 &size)
 {
   return this->isClicked(curLoc, size) &&
          this->mouseClick.right;
+}
+
+bool Detactor::isLeftClicking(Vector2 &curLoc, Vector2 &size)
+{
+  return this->isInside(curLoc, size) &&
+         this->mouseClicking.left;
+}
+
+bool Detactor::isRightClicking(Vector2 &curLoc, Vector2 &size)
+{
+  return this->isInside(curLoc, size) &&
+         this->mouseClicking.right;
 }

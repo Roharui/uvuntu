@@ -33,6 +33,7 @@ int Driver::run(void)
         cursorHide();
 
         Detactor *detactor = Detactor::detact();
+        page.execute(detactor);
         icon.execute(detactor);
         cursor.execute(detactor);
 
@@ -44,6 +45,7 @@ int Driver::run(void)
 
         ClearBackground(WHITE);
         icon.run();
+        page.run();
         cursor.run();
 
         // =================
@@ -64,6 +66,7 @@ void Driver::init()
 
     loader = new Loader;
 
+    page.init({128.0f, 0.0f}, {100.0f, 100.0f}, BLUE);
     icon.init(loader, NULL_VEC);
     cursor.init(loader);
 }

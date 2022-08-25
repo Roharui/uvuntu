@@ -46,9 +46,9 @@ target_link_libraries(
   # 드라이버
   uvuntu_driver 
   # Object 관련 
-  uvuntu_object uvuntu_texture uvuntu_button
+  uvuntu_object uvuntu_texture uvuntu_button uvuntu_drag
   # Objs
-  uvuntu_icon uvuntu_cursor
+  uvuntu_icon uvuntu_cursor uvuntu_page
   # clickable
   uvuntu_clickable
   # 기타

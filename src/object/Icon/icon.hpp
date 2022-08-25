@@ -1,7 +1,7 @@
 #ifndef __UVUNTU_ICON__
 #define __UVUNTU_ICON__
 
-#include "clickable/clickable.hpp"
+#include "able/clickable.hpp"
 
 #include "object/texture/texture.hpp"
 #include "object/button/button.hpp"
