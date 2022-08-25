@@ -1,11 +1,9 @@
-
-#include "object/cursor/cursor.hpp"
-#include "object/button/button.hpp"
-#include "object/taskbar/taskbar.hpp"
-#include "object/page/page.hpp"
-
 #ifndef __UVUNTU_DRIVER__
 #define __UVUNTU_DRIVER__
+
+#include "object/cursor/cursor.hpp"
+#include "object/taskbar/taskbar.hpp"
+#include "object/page/page.hpp"
 
 namespace uvuntu
 {
