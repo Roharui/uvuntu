@@ -5,6 +5,7 @@ add_subdirectory(texture)
 add_subdirectory(drag)
 add_subdirectory(cursor)
 add_subdirectory(icon)
+add_subdirectory(taskbar)
 add_subdirectory(page)
 
 # 내부 라이브러리 추가

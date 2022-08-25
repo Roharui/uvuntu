@@ -6,10 +6,13 @@
 
 using std::string;
 
-void cursorHide()
+namespace uvuntu
 {
-  if (IsCursorOnScreen())
+  void cursorHide()
   {
-    HideCursor();
+    if (IsCursorOnScreen())
+    {
+      HideCursor();
+    }
   }
 }

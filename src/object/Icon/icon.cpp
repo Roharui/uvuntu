@@ -6,30 +6,29 @@
 
 using namespace std;
 
-void IconObj::init(Loader *loader, Vector2 curLoc, string img_path)
+namespace uvuntu
 {
-  TextureObj::init(loader, img_path);
-  this->curLoc = curLoc;
+  void IconObj::init(Loader *loader, Vector2 curLoc, string img_path)
+  {
+    TextureObj::init(loader, img_path);
+    this->curLoc = curLoc;
 
-  this->clickable = Clickable(
-      []() {},
-      []()
-      {
-        cout << "LClicked!" << endl;
-      },
-      []()
-      {
-        cout << "RClicked!" << endl;
-      },
-      false);
-}
+    this->clickable = Clickable(
+        []() {},
+        []()
+        {
+          cout << "LClicked!" << endl;
+        },
+        []()
+        {
+          cout << "RClicked!" << endl;
+        },
+        false);
+  }
 
-void IconObj::execute(Detactor *data)
-{
-  this->clickable.run(data, this->curLoc, this->size);
-}
+  void IconObj::execute(Detactor *data)
+  {
+    this->clickable.run(data, this->curLoc, this->size);
+  }
 
-void IconObj::run(void)
-{
-  TextureObj::run();
 }

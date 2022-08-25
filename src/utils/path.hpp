@@ -6,6 +6,9 @@
 
 using std::string;
 
-string ExePath();
+namespace uvuntu
+{
+  string ExePath();
+}
 
 #endif

@@ -4,11 +4,14 @@
 #include <raylib.h>
 #include "object/texture/texture.hpp"
 
-class CursorObj : public TextureObj
+namespace uvuntu
 {
-public:
-  void init(Loader *loader);
-  void execute(Detactor *data);
-};
+  class CursorObj : public TextureObj
+  {
+  public:
+    void init(Loader *loader);
+    void execute(Detactor *data);
+  };
+}
 
 #endif

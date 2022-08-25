@@ -4,32 +4,35 @@
 #include <raylib.h>
 #include "utils/utils.hpp"
 
-class Detactor
+namespace uvuntu
 {
-private:
-  Detactor(Vector2 mouseLoc, Vector2 mouseMove, MouseClick mouseClick, MouseClick mouseClicking, int key);
-  Vector2 mouseLoc;
-  Vector2 mouseMove;
-  MouseClick mouseClick;
-  MouseClick mouseClicking;
-  int key;
+  class Detactor
+  {
+  private:
+    Detactor(Vector2 mouseLoc, Vector2 mouseMove, MouseClick mouseClick, MouseClick mouseClicking, int key);
+    Vector2 mouseLoc;
+    Vector2 mouseMove;
+    MouseClick mouseClick;
+    MouseClick mouseClicking;
+    int key;
 
-  bool clicked = false;
+    bool clicked = false;
 
-public:
-  static Detactor *detact(void);
-  Vector2 getClickLoc(void);
-  Vector2 getClickMove(void);
-  MouseClick getMouseClick(void);
-  MouseClick getMouseClicking(void);
-  int getKey(void);
+  public:
+    static Detactor *detact(void);
+    Vector2 getClickLoc(void);
+    Vector2 getClickMove(void);
+    MouseClick getMouseClick(void);
+    MouseClick getMouseClicking(void);
+    int getKey(void);
 
-  void setClicked(bool clicked);
-  bool getClicked(void);
+    void setClicked(bool clicked);
+    bool getClicked(void);
 
-  bool isInside(Vector2 &curLoc, Vector2 &size);
-  isMouseClick isClicked(Vector2 &curLoc, Vector2 &size);
-  isMouseClick isClicking(Vector2 &curLoc, Vector2 &size);
-};
+    bool isInside(Vector2 &curLoc, Vector2 &size);
+    isMouseClick isClicked(Vector2 &curLoc, Vector2 &size);
+    isMouseClick isClicking(Vector2 &curLoc, Vector2 &size);
+  };
+}
 
 #endif

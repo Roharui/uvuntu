@@ -2,28 +2,29 @@
 #define __UVUNTU_CLICKABLE__
 
 #include <functional>
-
 #include "driver/detactor/detactor.hpp"
 
-#define RETURN_VOID
-
-class Clickable
+namespace uvuntu
 {
-private:
-  void (*click)(void);
-  void (*lclick)(void);
-  void (*rclick)(void);
-  bool useClick = true;
+  class Clickable
+  {
+  private:
+    void (*click)(void);
+    void (*lclick)(void);
+    void (*rclick)(void);
+    bool useClick = true;
 
-public:
-  Clickable(
-      void (*click)(void),
-      void (*lclick)(void),
-      void (*rclick)(void),
-      bool useClick);
-  Clickable() {}
-  void run(Detactor *data, Vector2 &curLoc, Vector2 &size);
-  void LRClick(MouseClick click);
-};
+  public:
+    Clickable(
+        void (*click)(void),
+        void (*lclick)(void),
+        void (*rclick)(void),
+        bool useClick);
+    Clickable() {}
+    void run(Detactor *data, Vector2 &curLoc, Vector2 &size);
+    void LRClick(MouseClick click);
+  };
+
+}
 
 #endif

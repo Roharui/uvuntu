@@ -12,15 +12,18 @@ using std::string;
 
 using namespace Json;
 
-class Loader
+namespace uvuntu
 {
-private:
-  map<string, Texture2D> mapset;
-  Value openJSON(string path);
+  class Loader
+  {
+  private:
+    map<string, Texture2D> mapset;
+    Value openJSON(string path);
 
-public:
-  Loader();
-  Texture2D getTexture(string path);
-};
+  public:
+    Loader();
+    Texture2D getTexture(string path);
+  };
+}
 
 #endif

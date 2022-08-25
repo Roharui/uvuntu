@@ -8,8 +8,11 @@ using std::string;
 using std::filesystem::current_path;
 using std::filesystem::__cxx11::path;
 
-string ExePath()
+namespace uvuntu
 {
-  path path = current_path();
-  return path.generic_string();
+  string ExePath()
+  {
+    path path = current_path();
+    return path.generic_string();
+  }
 }

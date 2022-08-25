@@ -5,19 +5,20 @@
 #include <string>
 
 #include "object/object.hpp"
-#include "loader/imgLoader.hpp"
 
 using std::string;
 
-class TextureObj : public Object
+namespace uvuntu
 {
-protected:
-  Texture2D texture;
+  class TextureObj : public Object
+  {
+  protected:
+    Texture2D texture;
 
-public:
-  void init(Loader *loader, string path);
-  void execute(Detactor *data);
-  void run(void);
-};
+  public:
+    void init(Loader *loader, string path);
+    void run(void);
+  };
+}
 
 #endif

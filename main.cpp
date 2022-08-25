@@ -4,13 +4,25 @@
 
 #include "driver/driver.hpp"
 
+using namespace uvuntu;
+
 int main()
 {
-	std::cout << "Application running..." << std::endl;
+  std::cout << "Application running..." << std::endl;
 
-	Driver driver;
+  try
+  {
+    Driver driver;
 
-	driver.init();
-
-	return driver.run();
+    driver.init();
+    driver.run();
+  }
+  catch (Exception &e)
+  {
+    std::cout << e.what() << std::endl;
+  }
+  catch (...)
+  {
+  };
+  return 0;
 }

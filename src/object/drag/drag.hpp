@@ -3,10 +3,13 @@
 
 #include "object/object.hpp"
 
-class DragObj : public Object
+namespace uvuntu
 {
-public:
-  void execute(Detactor *data);
-};
+  class DragObj : public Object
+  {
+  public:
+    void execute(Detactor *data);
+  };
+}
 
 #endif

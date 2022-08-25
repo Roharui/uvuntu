@@ -2,19 +2,22 @@
 #ifndef __UVUNTU_UTILS__
 #define __UVUNTU_UTILS__
 
-struct MouseClick
+namespace uvuntu
 {
-  bool left;
-  bool right;
-  bool middle;
-};
+  struct MouseClick
+  {
+    bool left;
+    bool right;
+    bool middle;
+  };
 
-struct isMouseClick
-{
-  MouseClick click;
-  bool isClick;
-};
+  struct isMouseClick
+  {
+    MouseClick click;
+    bool isClick;
+  };
 
-void cursorHide();
+  void cursorHide();
+}
 
 #endif

@@ -48,7 +48,8 @@ target_link_libraries(
   # Object 관련 
   uvuntu_object uvuntu_texture uvuntu_button uvuntu_drag
   # Objs
-  uvuntu_icon uvuntu_cursor uvuntu_page
+  uvuntu_taskbar
+  uvuntu_icon uvuntu_cursor uvuntu_page 
   # clickable
   uvuntu_clickable
   # 기타

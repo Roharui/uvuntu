@@ -4,18 +4,19 @@
 #include "able/clickable.hpp"
 
 #include "object/texture/texture.hpp"
-#include "object/button/button.hpp"
 #include "loader/imgLoader.hpp"
 
-class IconObj : public TextureObj
+namespace uvuntu
 {
-private:
-  Clickable clickable;
+  class IconObj : public TextureObj
+  {
+  private:
+    Clickable clickable;
 
-public:
-  void init(Loader *loader, Vector2 curLoc, string img_path);
-  void execute(Detactor *data);
-  void run(void);
-};
+  public:
+    void init(Loader *loader, Vector2 curLoc, string img_path);
+    void execute(Detactor *data);
+  };
+}
 
 #endif
