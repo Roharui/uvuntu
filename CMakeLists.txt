@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 # resources build 디렉토리에 추가 
 execute_process(
-  COMMAND cp -r src/resources build/resources
+  COMMAND cp -r src/resources build/
   WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
 

@@ -34,7 +34,7 @@ int Driver::run(void)
 
         Detactor *detactor = Detactor::detact();
         page.execute(detactor);
-        icon.execute(detactor);
+        icons.execute(detactor);
         cursor.execute(detactor);
 
         // ============================
@@ -44,7 +44,7 @@ int Driver::run(void)
         // === draw side ===
 
         ClearBackground(WHITE);
-        icon.run();
+        icons.run();
         page.run();
         cursor.run();
 
@@ -67,7 +67,7 @@ void Driver::init()
     loader = new Loader;
 
     page.init({128.0f, 0.0f}, {100.0f, 100.0f}, BLUE);
-    icon.init(loader, NULL_VEC);
+    icons.init(loader, {"directory", "file"});
     cursor.init(loader);
 }
 

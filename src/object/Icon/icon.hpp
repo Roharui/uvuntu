@@ -13,7 +13,7 @@ private:
   Clickable clickable;
 
 public:
-  void init(Loader *loader, Vector2 curLoc);
+  void init(Loader *loader, Vector2 curLoc, string img_path);
   void execute(Detactor *data);
   void run(void);
 };

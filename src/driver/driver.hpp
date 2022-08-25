@@ -3,14 +3,14 @@
 
 #include "object/cursor/cursor.hpp"
 #include "object/button/button.hpp"
-#include "object/icon/icon.hpp"
+#include "object/icon/icons.hpp"
 #include "object/page/page.hpp"
 
 class Driver
 {
 private:
     CursorObj cursor;
-    IconObj icon;
+    Icons icons;
     PageObj page;
 
     Loader *loader;

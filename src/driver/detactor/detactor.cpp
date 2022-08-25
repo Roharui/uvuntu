@@ -33,9 +33,9 @@ Detactor::Detactor(Vector2 mouseLoc, Vector2 mouseMove, MouseClick mouseClick, M
   this->key = key;
 }
 
-void Detactor::setClicked()
+void Detactor::setClicked(bool clicked)
 {
-  this->clicked = true;
+  this->clicked = clicked;
 }
 
 bool Detactor::getClicked()

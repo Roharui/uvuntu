@@ -24,7 +24,7 @@ public:
   MouseClick getMouseClicking(void);
   int getKey(void);
 
-  void setClicked(void);
+  void setClicked(bool clicked);
   bool getClicked(void);
 
   bool isInside(Vector2 &curLoc, Vector2 &size);

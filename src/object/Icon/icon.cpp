@@ -6,18 +6,13 @@
 
 using namespace std;
 
-void IconObj::init(Loader *loader, Vector2 curLoc)
+void IconObj::init(Loader *loader, Vector2 curLoc, string img_path)
 {
-  TextureObj::init(loader, "directory");
+  TextureObj::init(loader, img_path);
   this->curLoc = curLoc;
 
-  auto x = []() {};
-
   this->clickable = Clickable(
-      []()
-      {
-        cout << "Clicked!" << endl;
-      },
+      []() {},
       []()
       {
         cout << "LClicked!" << endl;
@@ -25,7 +20,8 @@ void IconObj::init(Loader *loader, Vector2 curLoc)
       []()
       {
         cout << "RClicked!" << endl;
-      });
+      },
+      false);
 }
 
 void IconObj::execute(Detactor *data)
