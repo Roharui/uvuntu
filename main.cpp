@@ -8,7 +8,7 @@ int main()
 {
 	std::cout << "Application running..." << std::endl;
 
-	Driver driver = Driver();
+	Driver driver;
 
 	driver.init();
 

@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.proto": "proto3",
+    ".env": "bat",
+    "*.conf": "properties",
+    "ostream": "cpp",
+    "iostream": "cpp",
+    "random": "cpp",
+    "functional": "cpp"
+  }
+}

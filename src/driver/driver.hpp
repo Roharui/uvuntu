@@ -3,12 +3,15 @@
 
 #include "object/cursor/cursor.hpp"
 #include "object/button/button.hpp"
+#include "object/icon/icon.hpp"
 
 class Driver
 {
 private:
-    Cursor cursor;
-    Button button;
+    CursorObj cursor;
+    IconObj icon;
+
+    Loader *loader;
 
 public:
     int run(void);

@@ -1,21 +1,16 @@
 
 #include <raylib.h>
 
-#include "object/object.hpp"
+#include "object/texture/texture.hpp"
 
 #include "cursor.hpp"
 
-void Cursor::init(Loader *loader)
+void CursorObj::init(Loader *loader)
 {
-  this->cursor = loader->getTexture("cursor");
+  TextureObj::init(loader, "cursor");
 }
 
-void Cursor::execute(Detactor *data)
+void CursorObj::execute(Detactor *data)
 {
-  this->v = data->getClickLoc();
-}
-
-void Cursor::run()
-{
-  DrawTexture(this->cursor, (int)this->v.x, (int)this->v.y, WHITE);
+  this->curLoc = data->getClickLoc();
 }

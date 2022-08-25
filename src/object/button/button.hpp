@@ -1,18 +1,16 @@
 #ifndef __UVUNTU_BUTTON__
 #define __UVUNTU_BUTTON__
 
-#include "raylib.h"
+#include <raylib.h>
 
 #include "object/object.hpp"
 
-class Button : public Object
+class ButtonObj : public Object
 {
-private:
-  Vector2 curLoc;
-  Vector2 size;
-  Color color;
-
-  bool isClicked = false;
+protected:
+  void whenClicked(void);
+  void whenLeftClicked(void);
+  void whenRightClicked(void);
 
 public:
   void init(Vector2 curLoc, Vector2 size, Color color);

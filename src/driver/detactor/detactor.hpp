@@ -19,6 +19,7 @@ public:
   MouseClick getMouseClick(void);
   int getKey(void);
 
+  bool isInside(Vector2 &curLoc, Vector2 &size);
   bool isClicked(Vector2 &curLoc, Vector2 &size);
   bool isLeftClicked(Vector2 &curLoc, Vector2 &size);
   bool isRightClicked(Vector2 &curLoc, Vector2 &size);

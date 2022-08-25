@@ -2,18 +2,13 @@
 #define __UVUNTU_CURSOR__
 
 #include <raylib.h>
-#include "object/object.hpp"
+#include "object/texture/texture.hpp"
 
-class Cursor : public Object
+class CursorObj : public TextureObj
 {
-private:
-  Texture2D cursor;
-  Vector2 v;
-
 public:
   void init(Loader *loader);
   void execute(Detactor *data);
-  void run(void);
 };
 
 #endif

@@ -11,9 +11,9 @@ Detactor *Detactor::detact()
       GetMousePosition(),
       GetMouseDelta(),
       {
-          .left = IsMouseButtonDown(MOUSE_BUTTON_LEFT),
-          .right = IsMouseButtonDown(MOUSE_BUTTON_RIGHT),
-          .middle = IsMouseButtonDown(MOUSE_BUTTON_MIDDLE),
+          .left = IsMouseButtonPressed(MOUSE_BUTTON_LEFT),
+          .right = IsMouseButtonPressed(MOUSE_BUTTON_RIGHT),
+          .middle = IsMouseButtonPressed(MOUSE_BUTTON_MIDDLE),
       },
       GetKeyPressed());
   return result;
@@ -42,12 +42,18 @@ MouseClick Detactor::getMouseClick()
   return this->mouseClick;
 }
 
-bool Detactor::isClicked(Vector2 &curLoc, Vector2 &size)
+bool Detactor::isInside(Vector2 &curLoc, Vector2 &size)
 {
   return curLoc.x <= this->mouseLoc.x &&
          curLoc.y <= this->mouseLoc.y &&
          (curLoc.x + size.x) >= this->mouseLoc.x &&
          (curLoc.y + size.y) >= this->mouseLoc.y;
+}
+
+bool Detactor::isClicked(Vector2 &curLoc, Vector2 &size)
+{
+  return this->isInside(curLoc, size) &&
+         (this->mouseClick.left || this->mouseClick.right);
 }
 
 bool Detactor::isLeftClicked(Vector2 &curLoc, Vector2 &size)

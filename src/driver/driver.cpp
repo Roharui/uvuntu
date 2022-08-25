@@ -8,7 +8,6 @@
 
 #include "detactor/detactor.hpp"
 
-#include "object/object.hpp"
 #include "object/cursor/cursor.hpp"
 #include "object/button/button.hpp"
 
@@ -23,12 +22,6 @@
         0, 0, 0    \
     }
 
-// loader
-
-Loader *loader;
-
-// objects
-
 int Driver::run(void)
 {
     std::cout << "OK! Start!" << std::endl;
@@ -40,7 +33,7 @@ int Driver::run(void)
         cursorHide();
 
         Detactor *detactor = Detactor::detact();
-        button.execute(detactor);
+        icon.execute(detactor);
         cursor.execute(detactor);
 
         // ============================
@@ -50,7 +43,7 @@ int Driver::run(void)
         // === draw side ===
 
         ClearBackground(WHITE);
-        button.run();
+        icon.run();
         cursor.run();
 
         // =================
@@ -69,9 +62,9 @@ void Driver::init()
     InitWindow(800, 450, "Uvuntu");
     SetTargetFPS(60);
 
-    Loader *loader = new Loader;
+    loader = new Loader;
 
-    button.init({0.0f, 0.0f}, {100.0f, 100.0f}, BLUE);
+    icon.init(loader, NULL_VEC);
     cursor.init(loader);
 }
 

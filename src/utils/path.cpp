@@ -3,8 +3,6 @@
 #include <filesystem>
 #include <unistd.h>
 
-using std::cin;
-using std::cout;
 using std::endl;
 using std::string;
 using std::filesystem::current_path;

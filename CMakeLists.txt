@@ -46,7 +46,11 @@ target_link_libraries(
   # 드라이버
   uvuntu_driver 
   # Object 관련 
-  uvuntu_object uvuntu_cursor uvuntu_button 
+  uvuntu_object uvuntu_texture uvuntu_button
+  # Objs
+  uvuntu_icon uvuntu_cursor
+  # clickable
+  uvuntu_clickable
   # 기타
   uvuntu_loader uvuntu_utils uvuntu_detactor
   # 외부 라이브러리 추가
