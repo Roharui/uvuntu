@@ -11,7 +11,7 @@
 
 using std::list;
 
-class Icons : public Object
+class TaskBar : public Object
 {
 private:
   Vector2 iconLoc = {0, 0};

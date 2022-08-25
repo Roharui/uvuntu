@@ -4,11 +4,11 @@
     "filename": "/cursor.png"
   },
   "directory": {
-    "size": [128, 128],
+    "size": [50, 50],
     "filename": "/directory.png"
   },
   "file": {
-    "size": [128, 128],
+    "size": [50, 50],
     "filename": "/file.png"
   },
   "logo": {

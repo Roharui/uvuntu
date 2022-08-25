@@ -7,6 +7,6 @@
 
 #define WINDOW_FPS 120
 
-#define ICON_SIZE 128
+#define ICON_SIZE 50
 
 #endif

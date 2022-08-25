@@ -10,7 +10,7 @@ class Driver
 {
 private:
     CursorObj cursor;
-    Icons icons;
+    TaskBar icons;
     PageObj page;
 
     Loader *loader;

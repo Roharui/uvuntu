@@ -3,7 +3,7 @@
 #include "icon.hpp"
 #include "icons.hpp"
 
-void Icons::init(Loader *loader, list<string> iconList)
+void TaskBar::init(Loader *loader, list<string> iconList)
 {
   for (string str : iconList)
   {
@@ -19,9 +19,11 @@ void Icons::init(Loader *loader, list<string> iconList)
 
     this->icon_list.push_back(icobj);
   }
+  this->curLoc = {0, 0};
+  this->size = {ICON_SIZE, WINDOW_HEIGHT};
 }
 
-void Icons::execute(Detactor *detactor)
+void TaskBar::execute(Detactor *detactor)
 {
   for (IconObj icon : icon_list)
   {
@@ -29,8 +31,9 @@ void Icons::execute(Detactor *detactor)
   }
 }
 
-void Icons::run(void)
+void TaskBar::run(void)
 {
+  DrawRectangleV(this->curLoc, this->size, {104, 144, 232, 255});
   for (IconObj icon : icon_list)
   {
     icon.run();
