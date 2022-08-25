@@ -14,6 +14,8 @@ private:
   MouseClick mouseClicking;
   int key;
 
+  bool clicked = false;
+
 public:
   static Detactor *detact(void);
   Vector2 getClickLoc(void);
@@ -21,6 +23,9 @@ public:
   MouseClick getMouseClick(void);
   MouseClick getMouseClicking(void);
   int getKey(void);
+
+  void setClicked(void);
+  bool getClicked(void);
 
   bool isInside(Vector2 &curLoc, Vector2 &size);
   bool isClicked(Vector2 &curLoc, Vector2 &size);

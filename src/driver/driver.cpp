@@ -62,7 +62,7 @@ int Driver::run(void)
 void Driver::init()
 {
     InitWindow(800, 450, "Uvuntu");
-    SetTargetFPS(60);
+    SetTargetFPS(120);
 
     loader = new Loader;
 
