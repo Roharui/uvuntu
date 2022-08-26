@@ -1,6 +1,7 @@
 
 # 서브 디렉토리 추가
 add_subdirectory(texture)
+add_subdirectory(block)
 add_subdirectory(drag)
 add_subdirectory(cursor)
 add_subdirectory(icon)

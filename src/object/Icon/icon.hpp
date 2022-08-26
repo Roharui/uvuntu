@@ -4,7 +4,6 @@
 #include "able/clickable.hpp"
 
 #include "object/texture/texture.hpp"
-#include "loader/imgLoader.hpp"
 
 namespace uvuntu
 {
@@ -13,9 +12,12 @@ namespace uvuntu
   private:
     Clickable clickable;
 
+  protected:
+    void Lclick(Detactor *data);
+    void Rclick(Detactor *data);
+
   public:
-    void init(Loader *loader, Vector2 curLoc, string img_path);
-    void execute(Detactor *data);
+    void init(Vector2 curLoc, string img_path);
   };
 }
 

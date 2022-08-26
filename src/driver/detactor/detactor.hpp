@@ -31,7 +31,6 @@ namespace uvuntu
 
     bool isInside(Vector2 &curLoc, Vector2 &size);
     isMouseClick isClicked(Vector2 &curLoc, Vector2 &size);
-    isMouseClick isClicking(Vector2 &curLoc, Vector2 &size);
   };
 }
 

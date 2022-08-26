@@ -1,6 +1,8 @@
 #ifndef __UVUNTU_DRIVER__
 #define __UVUNTU_DRIVER__
 
+#include "loader/imgLoader.hpp"
+
 #include "object/cursor/cursor.hpp"
 #include "object/taskbar/taskbar.hpp"
 #include "object/page/page.hpp"
@@ -11,10 +13,10 @@ namespace uvuntu
   {
   private:
     CursorObj cursor;
-    TaskBar icons;
+    TaskBar taskbar;
     PageObj page;
 
-    Loader *loader;
+    ImgLoader *loader;
 
   public:
     int run(void);

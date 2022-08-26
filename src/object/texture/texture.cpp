@@ -1,15 +1,17 @@
 
 #include <string>
 
+#include "loader/imgLoader.hpp"
+
 #include "texture.hpp"
 
 using std::string;
 
 namespace uvuntu
 {
-  void TextureObj::init(Loader *loader, string path)
+  void TextureObj::init(string path)
   {
-    this->texture = loader->getTexture(path);
+    this->texture = ImgLoader::loader->getTexture(path);
     this->size = {
         (float)this->texture.width,
         (float)this->texture.height};
@@ -23,5 +25,9 @@ namespace uvuntu
         (int)this->curLoc.x,
         (int)this->curLoc.y,
         this->color);
+    for (Object *obj : this->objLst)
+    {
+      obj->run();
+    }
   }
 }

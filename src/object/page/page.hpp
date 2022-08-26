@@ -2,16 +2,12 @@
 #define __UVUNTU_PAGE__
 
 #include <raylib.h>
-#include "object/drag/drag.hpp"
-#include "driver/detactor/detactor.hpp"
+#include "object/block/block.hpp"
 
 namespace uvuntu
 {
-  class PageObj : public DragObj
+  class PageObj : public BlockObj
   {
-  public:
-    void init(Vector2 curLoc, Vector2 size, Color color);
-    void run(void);
   };
 }
 

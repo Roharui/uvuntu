@@ -5,12 +5,14 @@
 
 namespace uvuntu
 {
-  void TaskBar::init(Loader *loader, list<string> iconList)
+
+  // == public ==
+  void TaskBar::init(list<string> iconList)
   {
     for (string str : iconList)
     {
-      IconObj icobj;
-      icobj.init(loader, this->iconLoc, str);
+      IconObj *icobj = new IconObj();
+      icobj->init(this->iconLoc, str);
 
       this->iconLoc.y += this->iconSize;
       if (iconLoc.y + this->iconSize >= WINDOW_HEIGHT)
@@ -19,26 +21,16 @@ namespace uvuntu
         this->iconLoc.x += this->iconSize;
       }
 
-      this->icon_list.push_back(icobj);
+      this->objLst.push_back(icobj);
     }
-    this->curLoc = {0, 0};
-    this->size = {ICON_SIZE, WINDOW_HEIGHT};
+    BlockObj::init({0, 0}, {ICON_SIZE, WINDOW_HEIGHT}, BLUE);
   }
 
-  void TaskBar::execute(Detactor *detactor)
+  TaskBar::~TaskBar()
   {
-    for (IconObj icon : icon_list)
+    for (Object *obj : this->objLst)
     {
-      icon.execute(detactor);
-    }
-  }
-
-  void TaskBar::run(void)
-  {
-    DrawRectangleV(this->curLoc, this->size, {104, 144, 232, 255});
-    for (IconObj icon : icon_list)
-    {
-      icon.run();
+      delete obj;
     }
   }
 }

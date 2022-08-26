@@ -7,8 +7,6 @@ namespace uvuntu
 {
   class DragObj : public Object
   {
-  public:
-    void execute(Detactor *data);
   };
 }
 

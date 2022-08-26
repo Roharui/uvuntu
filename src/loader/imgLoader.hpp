@@ -14,15 +14,19 @@ using namespace Json;
 
 namespace uvuntu
 {
-  class Loader
+  class ImgLoader
   {
   private:
     map<string, Texture2D> mapset;
     Value openJSON(string path);
 
   public:
-    Loader();
+    ImgLoader();
+    static ImgLoader *loader;
     Texture2D getTexture(string path);
+    virtual ~ImgLoader()
+    {
+    }
   };
 }
 

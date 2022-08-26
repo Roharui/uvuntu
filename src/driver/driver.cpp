@@ -30,7 +30,7 @@ namespace uvuntu
 
       Detactor *detactor = Detactor::detact();
       page.execute(detactor);
-      icons.execute(detactor);
+      taskbar.execute(detactor);
       cursor.execute(detactor);
 
       // ============================
@@ -40,8 +40,8 @@ namespace uvuntu
       // === draw side ===
 
       ClearBackground(WHITE);
-      icons.run();
       page.run();
+      taskbar.run();
       cursor.run();
 
       // =================
@@ -60,11 +60,13 @@ namespace uvuntu
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_NAME);
     SetTargetFPS(WINDOW_FPS);
 
-    loader = new Loader;
+    loader = new ImgLoader;
 
-    page.init({128.0f, 0.0f}, {100.0f, 100.0f}, BLUE);
-    icons.init(loader, {"directory", "file", "file", "file", "file", "file"});
-    cursor.init(loader);
+    ImgLoader::loader = loader;
+
+    page.init({128.0f, 0.0f}, {300.0f, 200.0f}, GRAY);
+    taskbar.init({"directory", "file", "file", "file", "file", "file"});
+    cursor.init();
   }
 
   Driver::~Driver()

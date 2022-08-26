@@ -16,8 +16,9 @@ namespace uvuntu
     Texture2D texture;
 
   public:
-    void init(Loader *loader, string path);
+    void init(string path);
     void run(void);
+    virtual ~TextureObj(){};
   };
 }
 

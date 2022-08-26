@@ -9,7 +9,7 @@ namespace uvuntu
   class CursorObj : public TextureObj
   {
   public:
-    void init(Loader *loader);
+    void init();
     void execute(Detactor *data);
   };
 }

@@ -5,9 +5,9 @@
 
 namespace uvuntu
 {
-  void CursorObj::init(Loader *loader)
+  void CursorObj::init()
   {
-    TextureObj::init(loader, "cursor");
+    TextureObj::init("cursor");
   }
 
   void CursorObj::execute(Detactor *data)

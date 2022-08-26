@@ -80,23 +80,23 @@ namespace uvuntu
 
   isMouseClick Detactor::isClicked(Vector2 &curLoc, Vector2 &size)
   {
-    bool result =
+    bool isclick =
         this->isInside(curLoc, size) &&
         (this->mouseClick.left || this->mouseClick.right);
-    if (this->clicked)
-      return {this->mouseClick, false};
-    this->clicked = result;
-    return {this->mouseClick, result};
-  }
-
-  isMouseClick Detactor::isClicking(Vector2 &curLoc, Vector2 &size)
-  {
-    bool result =
+    bool isclicking =
         this->isInside(curLoc, size) &&
         (this->mouseClicking.left || this->mouseClicking.right);
     if (this->clicked)
-      return {this->mouseClicking, false};
-    this->clicked = result;
-    return {this->mouseClicking, result};
+      return {
+          .click = this->mouseClick,
+          .clicking = this->mouseClicking,
+          .isClick = false,
+          .isClicking = false};
+    this->clicked = isclick || isclicking;
+    return {
+        .click = this->mouseClick,
+        .clicking = this->mouseClicking,
+        .isClick = isclick,
+        .isClicking = isclicking};
   }
 }

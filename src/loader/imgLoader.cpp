@@ -25,7 +25,7 @@ namespace uvuntu
 {
   // === private ===
 
-  Value Loader::openJSON(string path)
+  Value ImgLoader::openJSON(string path)
   {
     std::ifstream json_file;
     json_file.open(path, std::ifstream::in | std::ifstream::binary);
@@ -37,10 +37,10 @@ namespace uvuntu
   }
 
   // ==== public ====
+  ImgLoader *ImgLoader::loader = nullptr;
 
-  Loader::Loader()
+  ImgLoader::ImgLoader()
   {
-
     string resources_path = ExePath() + "/resources";
     string img_json = "/.img.json";
     string json_path = resources_path + img_json;
@@ -72,7 +72,7 @@ namespace uvuntu
     }
   }
 
-  Texture2D Loader::getTexture(string path)
+  Texture2D ImgLoader::getTexture(string path)
   {
     return this->mapset.find(path)->second;
   }

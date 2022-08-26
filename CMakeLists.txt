@@ -46,7 +46,7 @@ target_link_libraries(
   # 드라이버
   uvuntu_driver 
   # Object 관련 
-  uvuntu_object uvuntu_texture uvuntu_drag
+  uvuntu_object uvuntu_texture uvuntu_block
   # Objs
   uvuntu_taskbar
   uvuntu_icon uvuntu_cursor uvuntu_page 

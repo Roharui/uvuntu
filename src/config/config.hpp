@@ -8,5 +8,6 @@
 #define WINDOW_FPS 120
 
 #define ICON_SIZE 50
+#define TOP_NAV_HEIGHT 20
 
 #endif

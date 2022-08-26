@@ -14,7 +14,9 @@ namespace uvuntu
   struct isMouseClick
   {
     MouseClick click;
+    MouseClick clicking;
     bool isClick;
+    bool isClicking;
   };
 
   void cursorHide();
