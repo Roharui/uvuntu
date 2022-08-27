@@ -18,7 +18,7 @@ namespace uvuntu
     this->color = WHITE;
   }
 
-  void TextureObj::run()
+  void TextureObj::show()
   {
     DrawTexture(
         this->texture,
@@ -27,7 +27,7 @@ namespace uvuntu
         this->color);
     for (Object *obj : this->objLst)
     {
-      obj->run();
+      obj->show();
     }
   }
 }

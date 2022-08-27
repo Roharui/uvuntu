@@ -34,4 +34,27 @@ namespace uvuntu
       }
     }
   }
+
+  void Object::run(Detactor *data, void (*fn)(Detactor *, Object *))
+  {
+    fn(data, this);
+    for (auto *x : this->objLst)
+    {
+      x->run(data, fn);
+    }
+  }
+
+  void Object::move(Vector2 vec)
+  {
+    this->curLoc.x += vec.x;
+    this->curLoc.y += vec.y;
+  }
+
+  Object::~Object()
+  {
+    for (auto *x : this->objLst)
+    {
+      delete x;
+    }
+  }
 }

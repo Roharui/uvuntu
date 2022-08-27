@@ -17,7 +17,7 @@ namespace uvuntu
 
   public:
     void init(string path);
-    void run(void);
+    void show(void);
     virtual ~TextureObj(){};
   };
 }

@@ -11,6 +11,10 @@
     "string_view": "cpp",
     "initializer_list": "cpp",
     "string": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "istream": "cpp",
+    "mutex": "cpp",
+    "stop_token": "cpp",
+    "typeinfo": "cpp"
   }
 }

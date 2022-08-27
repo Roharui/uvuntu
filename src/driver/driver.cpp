@@ -40,9 +40,9 @@ namespace uvuntu
       // === draw side ===
 
       ClearBackground(WHITE);
-      page.run();
-      taskbar.run();
-      cursor.run();
+      page.show();
+      taskbar.show();
+      cursor.show();
 
       // =================
 

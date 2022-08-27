@@ -21,7 +21,6 @@ namespace uvuntu
 
   public:
     void init(list<string> iconList);
-    ~TaskBar();
   };
 }
 

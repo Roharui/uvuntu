@@ -14,7 +14,7 @@ namespace uvuntu
   {
   public:
     void init(Vector2 curLoc, Vector2 size, Color color);
-    void run(void);
+    void show(void);
   };
 }
 

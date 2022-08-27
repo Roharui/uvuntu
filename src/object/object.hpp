@@ -21,9 +21,12 @@ namespace uvuntu
     virtual void Rclicking(Detactor *data){};
 
   public:
+    void run(Detactor *data, void (*fun)(Detactor *, Object *));
+    void move(Vector2 vec);
+
     virtual void execute(Detactor *data);
-    virtual void run(void) = 0;
-    virtual ~Object(){};
+    virtual void show(void) = 0;
+    virtual ~Object();
   };
 }
 

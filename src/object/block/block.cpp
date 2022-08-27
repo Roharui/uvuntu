@@ -14,7 +14,7 @@ namespace uvuntu
     this->color = color;
   }
 
-  void BlockObj::run()
+  void BlockObj::show()
   {
     DrawRectangleV(
         this->curLoc,
@@ -22,7 +22,7 @@ namespace uvuntu
         this->color);
     for (Object *obj : this->objLst)
     {
-      obj->run();
+      obj->show();
     }
   }
 }

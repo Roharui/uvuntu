@@ -25,12 +25,4 @@ namespace uvuntu
     }
     BlockObj::init({0, 0}, {ICON_SIZE, WINDOW_HEIGHT}, BLUE);
   }
-
-  TaskBar::~TaskBar()
-  {
-    for (Object *obj : this->objLst)
-    {
-      delete obj;
-    }
-  }
 }
