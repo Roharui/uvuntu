@@ -66,16 +66,15 @@ namespace uvuntu
 
     ImgLoader::loader = loader;
 
-    PageObj *page = new PageObj();
-    TaskBar *taskbar = new TaskBar();
+    PageObj *page = new PageObj(nullptr);
+    TaskBar *taskbar = new TaskBar(nullptr);
 
     page->init({128.0f, 0.0f}, {300.0f, 200.0f}, GRAY);
     taskbar->init({"directory", "file", "file", "file", "file", "file"});
+    cursor.init();
 
     this->objManager.push(page);
     this->objManager.push(taskbar);
-
-    cursor.init();
   }
 
   Driver::~Driver()

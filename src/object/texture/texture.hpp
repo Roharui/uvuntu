@@ -16,6 +16,7 @@ namespace uvuntu
     Texture2D texture;
 
   public:
+    TextureObj(Object *obj) : Object(obj) {}
     void init(string path);
     void show(void);
     virtual ~TextureObj(){};

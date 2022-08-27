@@ -15,6 +15,8 @@ namespace uvuntu
     Vector2 size;
     Color color;
 
+    Object *super;
+
     virtual void Lclick(Detactor *data){};
     virtual void Rclick(Detactor *data){};
     virtual void Lclicking(Detactor *data){};
@@ -24,6 +26,7 @@ namespace uvuntu
     void run(Detactor *data, void (*fun)(Detactor *, Object *));
     void move(Vector2 vec);
 
+    Object(Object *obj);
     virtual void execute(Detactor *data);
     virtual void show(void) = 0;
     virtual ~Object();

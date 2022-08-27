@@ -4,6 +4,12 @@
 
 namespace uvuntu
 {
+
+  Object::Object(Object *obj)
+  {
+    this->super = obj;
+  }
+
   void Object::execute(Detactor *data)
   {
     for (Object *obj : this->objLst)

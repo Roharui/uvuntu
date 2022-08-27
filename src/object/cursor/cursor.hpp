@@ -9,6 +9,7 @@ namespace uvuntu
   class CursorObj : public TextureObj
   {
   public:
+    CursorObj() : TextureObj(nullptr) {}
     void init();
     void execute(Detactor *data);
   };

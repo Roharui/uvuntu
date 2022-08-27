@@ -11,7 +11,7 @@ namespace uvuntu
   {
     for (string str : iconList)
     {
-      IconObj *icobj = new IconObj();
+      IconObj *icobj = new IconObj(this);
       icobj->init(this->iconLoc, str);
 
       this->iconLoc.y += this->iconSize;

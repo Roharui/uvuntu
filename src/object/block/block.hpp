@@ -13,6 +13,7 @@ namespace uvuntu
   class BlockObj : public Object
   {
   public:
+    BlockObj(Object *obj) : Object(obj) {}
     void init(Vector2 curLoc, Vector2 size, Color color);
     void show(void);
   };

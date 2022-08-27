@@ -12,6 +12,7 @@ namespace uvuntu
     void Rclick(Detactor *data);
 
   public:
+    IconObj(Object *obj) : TextureObj(obj) {}
     void init(Vector2 curLoc, string img_path);
   };
 }

@@ -15,7 +15,7 @@ namespace uvuntu
       obj->move(vec);
     };
 
-    auto testBlock = new BlockObj();
+    auto testBlock = new BlockObj(this);
     testBlock->init(curLoc, {this->size.x, 20}, BLUE);
 
     this->objLst.push_back(testBlock);

@@ -20,6 +20,7 @@ namespace uvuntu
     int iconSize = ICON_SIZE;
 
   public:
+    TaskBar(Object *obj) : BlockObj(obj) {}
     void init(list<string> iconList);
   };
 }

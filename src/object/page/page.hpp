@@ -15,8 +15,8 @@ namespace uvuntu
     void Lclicking(Detactor *data);
 
   public:
+    PageObj(Object *obj) : BlockObj(obj) {}
     void init(Vector2 curLoc, Vector2 size, Color color);
-    void drag();
   };
 }
 

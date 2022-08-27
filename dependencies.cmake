@@ -8,11 +8,12 @@ add_dependencies(uvuntu_detactor uvuntu_utils)
 add_dependencies(uvuntu_object uvuntu_loader uvuntu_detactor)
 # object 상속 개체 의존성
 add_dependencies(uvuntu_texture uvuntu_object)
+add_dependencies(uvuntu_block uvuntu_object)
 # obj 개체 의존성
 add_dependencies(uvuntu_cursor uvuntu_texture)
 add_dependencies(uvuntu_icon uvuntu_texture)
-add_dependencies(uvuntu_taskbar uvuntu_icon)
-add_dependencies(uvuntu_page uvuntu_drag)
+add_dependencies(uvuntu_taskbar uvuntu_icon) 
+add_dependencies(uvuntu_page uvuntu_block) 
 # dirver 의존성
 add_dependencies(
   uvuntu_driver 
