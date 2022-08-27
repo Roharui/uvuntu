@@ -18,8 +18,6 @@ namespace uvuntu
     CursorObj cursor;
     ImgLoader *loader;
 
-    ObjectManager objManager;
-
   public:
     int run(void);
     void init(void);

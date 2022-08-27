@@ -4,6 +4,12 @@
 namespace uvuntu
 {
 
+  ObjectManager &ObjectManager::getIncetance()
+  {
+    static ObjectManager s;
+    return s;
+  }
+
   list<Object *> *ObjectManager::getList()
   {
     return &this->objLst;
@@ -12,6 +18,11 @@ namespace uvuntu
   void ObjectManager::push(Object *obj)
   {
     this->objLst.push_back(obj);
+  }
+
+  void ObjectManager::remove(Object *obj)
+  {
+    this->objLst.remove(obj);
   }
 
   ObjectManager::~ObjectManager()

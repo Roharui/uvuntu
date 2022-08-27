@@ -13,7 +13,7 @@ add_dependencies(uvuntu_block uvuntu_object)
 add_dependencies(uvuntu_cursor uvuntu_texture)
 add_dependencies(uvuntu_icon uvuntu_texture)
 add_dependencies(uvuntu_taskbar uvuntu_icon) 
-add_dependencies(uvuntu_page uvuntu_block) 
+add_dependencies(uvuntu_page uvuntu_block uvuntu_objmanager) 
 # dirver 의존성
 add_dependencies(
   uvuntu_driver 

@@ -22,26 +22,33 @@ namespace uvuntu
   {
     std::cout << "OK! Start!" << std::endl;
 
-    list<Object *> objs = *this->objManager.getList();
+    ObjectManager &objm = ObjectManager::getIncetance();
 
     while (!WindowShouldClose())
     {
-      // === detact, execute side ===
+      list<Object *> objs = *objm.getList();
+      Detactor *detactor = Detactor::detact();
+      objs.reverse();
+
+      // === execute side ===
 
       cursorHide();
 
-      Detactor *detactor = Detactor::detact();
       for (Object *obj : objs)
         obj->execute(detactor);
+
       cursor.execute(detactor);
 
-      // ============================
+      // ====================
+      objs.reverse();
+      // ====================
 
       BeginDrawing();
 
       // === draw side ===
 
       ClearBackground(WHITE);
+
       for (Object *obj : objs)
         obj->show();
       cursor.show();
@@ -66,15 +73,18 @@ namespace uvuntu
 
     ImgLoader::loader = loader;
 
-    PageObj *page = new PageObj(nullptr);
+    PageObj *page1 = new PageObj(nullptr);
     TaskBar *taskbar = new TaskBar(nullptr);
 
-    page->init({128.0f, 0.0f}, {300.0f, 200.0f}, GRAY);
+    page1->init({128.0f, 0.0f}, {300.0f, 200.0f}, GRAY);
     taskbar->init({"directory", "file", "file", "file", "file", "file"});
+
     cursor.init();
 
-    this->objManager.push(page);
-    this->objManager.push(taskbar);
+    ObjectManager &objManager = ObjectManager::getIncetance();
+
+    objManager.push(page1);
+    objManager.push(taskbar);
   }
 
   Driver::~Driver()

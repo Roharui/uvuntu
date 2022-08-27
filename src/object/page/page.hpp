@@ -11,10 +11,9 @@ namespace uvuntu
   private:
     void (*fn)(Detactor *data, Object *obj);
 
-  protected:
-    void Lclicking(Detactor *data);
-
   public:
+    void moveObj(Detactor *data);
+
     PageObj(Object *obj) : BlockObj(obj) {}
     void init(Vector2 curLoc, Vector2 size, Color color);
   };

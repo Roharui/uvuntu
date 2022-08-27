@@ -11,12 +11,16 @@ namespace uvuntu
   class ObjectManager
   {
   private:
+    ObjectManager() {}
+    ObjectManager(const ObjectManager &ref) {}
+    ~ObjectManager();
     list<Object *> objLst;
 
   public:
+    static ObjectManager &getIncetance();
     list<Object *> *getList();
     void push(Object *obj);
-    ~ObjectManager();
+    void remove(Object *obj);
   };
 }
 

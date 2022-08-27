@@ -16,6 +16,10 @@
     "mutex": "cpp",
     "stop_token": "cpp",
     "typeinfo": "cpp",
-    "list": "cpp"
+    "list": "cpp",
+    "deque": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "vector": "cpp"
   }
 }
