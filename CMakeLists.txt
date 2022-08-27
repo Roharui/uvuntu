@@ -45,13 +45,13 @@ target_link_libraries(
   # 내부 라이브러리 추가
   # 드라이버
   uvuntu_driver 
+  # 오브젝트 매니저
+  uvuntu_objmanager
   # Object 관련 
   uvuntu_object uvuntu_texture uvuntu_block
   # Objs
   uvuntu_taskbar
   uvuntu_icon uvuntu_cursor uvuntu_page 
-  # clickable
-  uvuntu_clickable
   # 기타
   uvuntu_loader uvuntu_utils uvuntu_detactor
   # 설정

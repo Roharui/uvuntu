@@ -1,7 +1,10 @@
 #ifndef __UVUNTU_DRIVER__
 #define __UVUNTU_DRIVER__
 
+#include <list>
+
 #include "loader/imgLoader.hpp"
+#include "manager/objectManager.hpp"
 
 #include "object/cursor/cursor.hpp"
 #include "object/taskbar/taskbar.hpp"
@@ -13,10 +16,9 @@ namespace uvuntu
   {
   private:
     CursorObj cursor;
-    TaskBar taskbar;
-    PageObj page;
-
     ImgLoader *loader;
+
+    ObjectManager objManager;
 
   public:
     int run(void);

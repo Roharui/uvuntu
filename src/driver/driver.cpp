@@ -22,6 +22,8 @@ namespace uvuntu
   {
     std::cout << "OK! Start!" << std::endl;
 
+    list<Object *> objs = *this->objManager.getList();
+
     while (!WindowShouldClose())
     {
       // === detact, execute side ===
@@ -29,8 +31,8 @@ namespace uvuntu
       cursorHide();
 
       Detactor *detactor = Detactor::detact();
-      page.execute(detactor);
-      taskbar.execute(detactor);
+      for (Object *obj : objs)
+        obj->execute(detactor);
       cursor.execute(detactor);
 
       // ============================
@@ -40,8 +42,8 @@ namespace uvuntu
       // === draw side ===
 
       ClearBackground(WHITE);
-      page.show();
-      taskbar.show();
+      for (Object *obj : objs)
+        obj->show();
       cursor.show();
 
       // =================
@@ -64,8 +66,15 @@ namespace uvuntu
 
     ImgLoader::loader = loader;
 
-    page.init({128.0f, 0.0f}, {300.0f, 200.0f}, GRAY);
-    taskbar.init({"directory", "file", "file", "file", "file", "file"});
+    PageObj *page = new PageObj();
+    TaskBar *taskbar = new TaskBar();
+
+    page->init({128.0f, 0.0f}, {300.0f, 200.0f}, GRAY);
+    taskbar->init({"directory", "file", "file", "file", "file", "file"});
+
+    this->objManager.push(page);
+    this->objManager.push(taskbar);
+
     cursor.init();
   }
 
