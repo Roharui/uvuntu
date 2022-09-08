@@ -78,5 +78,6 @@ _deps
 *.code-workspace
 
 build
+include
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,c++,cmake

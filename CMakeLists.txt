@@ -14,11 +14,12 @@ execute_process(
 
 # 전역 사용 디렉토리 지정
 include_directories(${CMAKE_SOURCE_DIR}/src)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 # 전역 사용 외부 디렉토리
-link_directories(C:/msys64/mingw64/include) 
+link_directories(C:/msys64/mingw64/include)
 
-# 다른 CmakeLists.txt 추가
+# 다른 CmakeLists.txt 추가 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 
 # 의존성 추가

@@ -1,7 +1,11 @@
 
 #include <raylib.h>
+
 #include <iostream>
 #include <string>
+
+#define RAYGUI_IMPLEMENTATION
+#include "raygui.h"
 
 #include "config/config.hpp"
 #include "driver.hpp"
@@ -59,6 +63,8 @@ namespace uvuntu
       if (selected != nullptr)
         selected->show();
 
+      GuiButton({0, 0, 100, 100}, "Hello World!");
+
       cursor.show();
 
       // =================
@@ -74,10 +80,11 @@ namespace uvuntu
 
   void Driver::init()
   {
+    // SetConfigFlags(FLAG_WINDOW_UNDECORATED);
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_NAME);
     SetTargetFPS(WINDOW_FPS);
 
-    loader = new ImgLoader;
+    this->loader = new ImgLoader;
 
     ImgLoader::loader = loader;
 

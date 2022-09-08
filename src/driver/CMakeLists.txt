@@ -1,4 +1,6 @@
 
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 # 서브 디렉토리 추가
 add_subdirectory(detactor)
 
