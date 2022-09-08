@@ -1,4 +1,6 @@
 
+#include <iostream>
+
 #include "manager/objectManager.hpp"
 #include "object/page/page.hpp"
 
@@ -20,7 +22,17 @@ namespace uvuntu
   void TitleBar::closePage()
   {
     ObjectManager &obm = ObjectManager::getIncetance();
+    if (this->super == obm.getSelected())
+    {
+      obm.setSelected(nullptr);
+      return;
+    }
     obm.remove(this->super);
+  }
+
+  void TitleBar::Lclick(Detactor *data)
+  {
+    ObjectManager::getIncetance().setSelected(this->super);
   }
 
   void TitleBar::Lclicking(Detactor *data)

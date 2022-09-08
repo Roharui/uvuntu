@@ -7,13 +7,16 @@ namespace uvuntu
 {
   class TitleBar : public BlockObj
   {
+  protected:
+    void Lclick(Detactor *data);
+    void Lclicking(Detactor *data);
+    void clickOutside(Detactor *data);
+
   public:
     void closePage();
 
-    void Lclicking(Detactor *data);
-
-    TitleBar(Object *obj) : BlockObj(obj) {}
     void init(Vector2 curLoc, Vector2 size, Color color);
+    TitleBar(Object *obj) : BlockObj(obj) {}
   };
 
 }

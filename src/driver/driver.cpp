@@ -27,12 +27,16 @@ namespace uvuntu
     while (!WindowShouldClose())
     {
       list<Object *> objs = *objm.getList();
+      Object *selected = objm.getSelected();
       Detactor *detactor = Detactor::detact();
       objs.reverse();
 
       // === execute side ===
 
       cursorHide();
+
+      if (selected != nullptr)
+        selected->execute(detactor);
 
       for (Object *obj : objs)
         obj->execute(detactor);
@@ -51,6 +55,10 @@ namespace uvuntu
 
       for (Object *obj : objs)
         obj->show();
+
+      if (selected != nullptr)
+        selected->show();
+
       cursor.show();
 
       // =================
@@ -74,9 +82,11 @@ namespace uvuntu
     ImgLoader::loader = loader;
 
     PageObj *page1 = new PageObj(nullptr);
+    PageObj *page2 = new PageObj(nullptr);
     TaskBar *taskbar = new TaskBar(nullptr);
 
-    page1->init({128.0f, 0.0f}, {300.0f, 200.0f}, GRAY);
+    page1->init({128.0f, 0.0f}, {500.0f, 400.0f}, GRAY);
+    page2->init({128.0f, 0.0f}, {500.0f, 400.0f}, YELLOW);
     taskbar->init({"directory", "file", "file", "file", "file", "file"});
 
     cursor.init();
@@ -84,6 +94,7 @@ namespace uvuntu
     ObjectManager &objManager = ObjectManager::getIncetance();
 
     objManager.push(page1);
+    objManager.push(page2);
     objManager.push(taskbar);
   }
 

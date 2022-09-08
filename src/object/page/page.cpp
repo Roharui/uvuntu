@@ -1,5 +1,7 @@
 
 #include "config/config.hpp"
+#include "manager/objectManager.hpp"
+
 #include "page.hpp"
 #include "titleBar.hpp"
 
@@ -20,6 +22,11 @@ namespace uvuntu
     tbar->init(curLoc, {size.x, 20}, BLUE);
 
     this->objLst.push_back(tbar);
+  }
+
+  void PageObj::Lclick(Detactor *data)
+  {
+    ObjectManager::getIncetance().setSelected(this);
   }
 
   void PageObj::moveObj(Detactor *data)

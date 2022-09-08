@@ -11,6 +11,9 @@ namespace uvuntu
   private:
     void (*fn)(Detactor *data, Object *obj);
 
+  protected:
+    void Lclick(Detactor *data);
+
   public:
     void moveObj(Detactor *data);
 
