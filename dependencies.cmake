@@ -10,6 +10,7 @@ add_dependencies(uvuntu_object uvuntu_loader uvuntu_detactor)
 add_dependencies(uvuntu_texture uvuntu_object)
 add_dependencies(uvuntu_block uvuntu_object)
 add_dependencies(uvuntu_icon uvuntu_object)
+add_dependencies(uvuntu_page uvuntu_object)
 # # obj 개체 의존성
 add_dependencies(uvuntu_cursor uvuntu_texture)
 # dirver 의존성

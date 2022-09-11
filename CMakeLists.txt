@@ -55,6 +55,7 @@ target_link_libraries(
   uvuntu_object 
   uvuntu_block
   uvuntu_texture 
+  uvuntu_page
   uvuntu_icon
   # 커서
   uvuntu_cursor

@@ -8,6 +8,7 @@
 
 #include "object/cursor/cursor.hpp"
 #include "object/icon/icon.hpp"
+#include "object/page/page.hpp"
 
 namespace uvuntu
 {

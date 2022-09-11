@@ -4,8 +4,8 @@ add_subdirectory(texture)
 add_subdirectory(block)
 add_subdirectory(cursor)
 add_subdirectory(icon)
+add_subdirectory(page)
 # add_subdirectory(taskbar)
-# add_subdirectory(page)
 
 # 내부 라이브러리 추가
 add_library(uvuntu_object STATIC object.cpp) 

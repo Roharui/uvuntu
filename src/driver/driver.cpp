@@ -81,7 +81,6 @@ namespace uvuntu
     SetTargetFPS(WINDOW_FPS);
 
     this->loader = new ImgLoader;
-
     ImgLoader::loader = loader;
 
     ObjectManager &objManager = ObjectManager::getIncetance();
@@ -92,11 +91,15 @@ namespace uvuntu
     IconObj *icon = new IconObj();
     icon->init({10.0, 10.0}, 5, ICON_FILE_SAVE);
 
+    PageObj *page = new PageObj(nullptr);
+    page->init({200.0, 100.0}, {500.0, 400.0}, "Hello World!");
+
     objManager.push(icon);
+    objManager.push(page);
   }
 
   Driver::~Driver()
   {
-    delete loader;
+    delete this->loader;
   }
 }
