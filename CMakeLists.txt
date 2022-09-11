@@ -14,10 +14,13 @@ execute_process(
 
 # 전역 사용 디렉토리 지정
 include_directories(${CMAKE_SOURCE_DIR}/src)
-include_directories(${CMAKE_SOURCE_DIR}/include)
 
 # 전역 사용 외부 디렉토리
 link_directories(C:/msys64/mingw64/include)
+
+# raygui
+add_library(raygui INTERFACE)
+target_include_directories(raygui INTERFACE ${CMAKE_SOURCE_DIR}/include)
 
 # 다른 CmakeLists.txt 추가 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src)
@@ -35,8 +38,8 @@ target_compile_options(
   -std=c++20 
   -ggdb3 
   -O3 
-  -Wall 
-  -Werror
+  # -Wall 
+  # -Werror
 )
 
 # 라이브러리 추가
@@ -49,10 +52,12 @@ target_link_libraries(
   # 오브젝트 매니저
   uvuntu_objmanager
   # Object 관련 
-  uvuntu_object uvuntu_texture uvuntu_block
-  # Objs
-  uvuntu_taskbar
-  uvuntu_icon uvuntu_cursor uvuntu_page 
+  uvuntu_object 
+  uvuntu_block
+  uvuntu_texture 
+  uvuntu_icon
+  # 커서
+  uvuntu_cursor
   # 기타
   uvuntu_loader uvuntu_utils uvuntu_detactor
   # 설정

@@ -1,6 +1,4 @@
 
-include_directories(${CMAKE_SOURCE_DIR}/include)
-
 # 서브 디렉토리 추가
 add_subdirectory(detactor)
 
@@ -8,4 +6,4 @@ add_subdirectory(detactor)
 add_library(uvuntu_driver STATIC driver.cpp)
 
 # 외부 라이브러리 추가
-target_link_libraries(uvuntu_driver raylib gdi32 winmm)
+target_link_libraries(uvuntu_driver raylib gdi32 winmm raygui)

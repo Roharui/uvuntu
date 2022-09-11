@@ -1,11 +1,10 @@
 
 #include <raylib.h>
 
+#include "raygui.h"
+
 #include <iostream>
 #include <string>
-
-#define RAYGUI_IMPLEMENTATION
-#include "raygui.h"
 
 #include "config/config.hpp"
 #include "driver.hpp"
@@ -45,8 +44,6 @@ namespace uvuntu
       for (Object *obj : objs)
         obj->execute(detactor);
 
-      cursor.execute(detactor);
-
       // ====================
       objs.reverse();
       // ====================
@@ -62,10 +59,6 @@ namespace uvuntu
 
       if (selected != nullptr)
         selected->show();
-
-      GuiButton({0, 0, 100, 100}, "Hello World!");
-
-      cursor.show();
 
       // =================
 
@@ -88,21 +81,16 @@ namespace uvuntu
 
     ImgLoader::loader = loader;
 
-    PageObj *page1 = new PageObj(nullptr);
-    PageObj *page2 = new PageObj(nullptr);
-    TaskBar *taskbar = new TaskBar(nullptr);
-
-    page1->init({128.0f, 0.0f}, {500.0f, 400.0f}, GRAY);
-    page2->init({128.0f, 0.0f}, {500.0f, 400.0f}, YELLOW);
-    taskbar->init({"directory", "file", "file", "file", "file", "file"});
-
-    cursor.init();
-
     ObjectManager &objManager = ObjectManager::getIncetance();
 
-    objManager.push(page1);
-    objManager.push(page2);
-    objManager.push(taskbar);
+    CursorObj *cursorObj = new CursorObj();
+    IconObj *icon = new IconObj();
+
+    cursorObj->init();
+    icon->init(ICON_CURSOR_CLASSIC, "test");
+
+    objManager.push(cursorObj);
+    objManager.push(icon);
   }
 
   Driver::~Driver()

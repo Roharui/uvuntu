@@ -2,6 +2,11 @@
 #include <raylib.h>
 #include <iostream>
 
+#include <raylib.h>
+#define RAYGUI_IMPLEMENTATION
+#include "raygui.h"
+#undef RAYGUI_IMPLEMENTATION
+
 #include "driver/driver.hpp"
 
 using namespace uvuntu;

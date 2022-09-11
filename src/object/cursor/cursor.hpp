@@ -1,7 +1,9 @@
 #ifndef __UVUNTU_CURSOR__
 #define __UVUNTU_CURSOR__
 
-#include <raylib.h>
+#include <list>
+
+#include "driver/detactor/detactor.hpp"
 #include "object/texture/texture.hpp"
 
 namespace uvuntu
