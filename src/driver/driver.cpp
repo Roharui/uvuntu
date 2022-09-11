@@ -9,6 +9,8 @@
 #include "config/config.hpp"
 #include "driver.hpp"
 
+#include "utils/hangle.hpp"
+
 #define NULL_VEC \
   {              \
     0.0f, 0.0f   \
@@ -77,8 +79,14 @@ namespace uvuntu
   void Driver::init()
   {
     // SetConfigFlags(FLAG_WINDOW_UNDECORATED);
+    GuiLoadStyleDefault();
+
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_NAME);
     SetTargetFPS(WINDOW_FPS);
+
+    Font font = LoadFontEx("NanumGothicBold.ttf", 12, font_chars, 11172);
+    GuiSetFont(font);
+    GuiSetStyle(DEFAULT, TEXT_SIZE, 12);
 
     this->loader = new ImgLoader;
     ImgLoader::loader = loader;
@@ -92,7 +100,7 @@ namespace uvuntu
     icon->init({10.0, 10.0}, 5, ICON_FILE_SAVE);
 
     PageObj *page = new PageObj(nullptr);
-    page->init({200.0, 100.0}, {500.0, 400.0}, "Hello World!");
+    page->init({200.0, 100.0}, {500.0, 400.0}, "\xC5\xD7\xBD\xBA\xC6\xAE");
 
     objManager.push(icon);
     objManager.push(page);
