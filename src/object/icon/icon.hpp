@@ -13,11 +13,11 @@ namespace uvuntu
   {
   private:
     int icon_type;
-    string icon_text;
+    int pixSize;
 
   public:
     IconObj() : Object(nullptr){};
-    void init(int icon_type, string icon_text);
+    void init(Vector2 curLoc, int pixSize, int icon_type);
     void show();
   };
 }

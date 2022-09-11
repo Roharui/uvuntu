@@ -10,11 +10,11 @@ using std::string;
 
 namespace uvuntu
 {
-  void IconObj::init(int icon_type, string icon_text)
+  void IconObj::init(Vector2 curLoc, int pixSize, int icon_type)
   {
-    this->curLoc = {0.0, 0.0};
+    this->curLoc = curLoc;
+    this->pixSize = pixSize;
     this->icon_type = icon_type;
-    this->icon_text = icon_text;
   }
 
   void IconObj::show()
@@ -23,7 +23,7 @@ namespace uvuntu
       this->icon_type, 
       this->curLoc.x, 
       this->curLoc.y, 
-      3, 
+      this->pixSize, 
       BLACK);
   }
 }

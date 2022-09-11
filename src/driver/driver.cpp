@@ -38,6 +38,7 @@ namespace uvuntu
 
       cursorHide();
 
+      this->cursorObj->execute(detactor);
       if (selected != nullptr)
         selected->execute(detactor);
 
@@ -59,6 +60,8 @@ namespace uvuntu
 
       if (selected != nullptr)
         selected->show();
+
+      this->cursorObj->show();
 
       // =================
 
@@ -83,13 +86,12 @@ namespace uvuntu
 
     ObjectManager &objManager = ObjectManager::getIncetance();
 
-    CursorObj *cursorObj = new CursorObj();
-    IconObj *icon = new IconObj();
-
+    this->cursorObj = new CursorObj();
     cursorObj->init();
-    icon->init(ICON_CURSOR_CLASSIC, "test");
 
-    objManager.push(cursorObj);
+    IconObj *icon = new IconObj();
+    icon->init({10.0, 10.0}, 5, ICON_FILE_SAVE);
+
     objManager.push(icon);
   }
 

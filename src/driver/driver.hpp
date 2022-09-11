@@ -15,6 +15,7 @@ namespace uvuntu
   {
   private:
     ImgLoader *loader;
+    CursorObj *cursorObj;
 
   public:
     int run(void);
