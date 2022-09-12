@@ -58,6 +58,11 @@ namespace uvuntu
     this->curLoc.y += vec.y;
   }
 
+  bool Object::getShow()
+  {
+    return this->isShow;
+  }
+
   Object::~Object()
   {
     for (auto *x : this->objLst)

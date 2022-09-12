@@ -100,7 +100,7 @@ namespace uvuntu
     icon->init({10.0, 10.0}, 5, ICON_FILE_SAVE);
 
     PageObj *page = new PageObj(nullptr);
-    page->init({200.0, 100.0}, {500.0, 400.0}, "\xC5\xD7\xBD\xBA\xC6\xAE");
+    page->init({200.0, 100.0}, {500.0, 400.0}, toHex("테스트"));
 
     objManager.push(icon);
     objManager.push(page);

@@ -3,6 +3,14 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <iterator>
+#include <algorithm>
+#include <vector>
+
+using std::hex;
+using std::string;
+using std::vector;
 
 using std::string;
 
@@ -14,5 +22,10 @@ namespace uvuntu
     {
       HideCursor();
     }
+  }
+
+  const char *toHex(string str)
+  {
+    return str.c_str();
   }
 }

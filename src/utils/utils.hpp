@@ -2,6 +2,10 @@
 #ifndef __UVUNTU_UTILS__
 #define __UVUNTU_UTILS__
 
+#include <string>
+
+using std::string;
+
 namespace uvuntu
 {
   struct MouseClick
@@ -20,6 +24,7 @@ namespace uvuntu
   };
 
   void cursorHide();
+  const char *toHex(string str);
 }
 
 #endif

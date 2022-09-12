@@ -2,6 +2,8 @@
 #include <raylib.h>
 #include "raygui.h"
 
+#include "manager/objectManager.hpp"
+
 #include "page.hpp"
 
 using std::string;
@@ -17,10 +19,15 @@ namespace uvuntu
 
   void PageObj::show(void)
   {
-    GuiWindowBox({this->curLoc.x,
-                  this->curLoc.y,
-                  this->size.x,
-                  this->size.y},
-                 this->title.c_str());
+    bool showing = GuiWindowBox({this->curLoc.x,
+                                 this->curLoc.y,
+                                 this->size.x,
+                                 this->size.y},
+                                this->title.c_str());
+    if (showing)
+    {
+      ObjectManager &obm = ObjectManager::getIncetance();
+      obm.remove(this);
+    }
   }
 }

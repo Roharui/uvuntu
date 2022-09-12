@@ -14,6 +14,7 @@ namespace uvuntu
     Vector2 curLoc;
     Vector2 size;
     Color color;
+    bool isShow = true;
 
     Object *super;
 
@@ -25,6 +26,7 @@ namespace uvuntu
   public:
     void run(Detactor *data, void (*fun)(Detactor *, Object *));
     void move(Vector2 vec);
+    bool getShow();
 
     Object(Object *obj);
     virtual void execute(Detactor *data);
