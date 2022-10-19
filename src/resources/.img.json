@@ -2,16 +2,5 @@
   "cursor": {
     "size": [14, 24],
     "filename": "/cursor.png"
-  },
-  "directory": {
-    "size": [50, 50],
-    "filename": "/directory.png"
-  },
-  "file": {
-    "size": [50, 50],
-    "filename": "/file.png"
-  },
-  "logo": {
-    "filename": "/logo.png"
   }
 }
